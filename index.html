@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio - Gustavo Mota</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+
+body{background:#f4f4f4;color:#333;scroll-behavior:smooth}
+
+
+header{
+position:fixed;width:100%;top:0;
+background:#1e1e2f;color:#fff;padding:15px;
+box-shadow:0 2px 5px rgba(0,0,0,.2)
+}
+nav{display:flex;justify-content:space-between;align-items:center}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:bold}
+nav a:hover{color:#00adb5}
+
+
+section{
+min-height:100vh;
+padding:100px 20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center
+}
+
+h1{margin-bottom:15px;font-size:2.5rem;color:#00adb5}
+
+
+#sobre{background:#222831;color:#fff}
+
+
+#formacao{background:#eeeeee}
+
+
+#portfolio{background:#393e46;color:#fff}
+.card{
+background:#fff;color:#000;
+padding:15px;margin:10px;border-radius:10px;
+width:250px;box-shadow:0 4px 10px rgba(0,0,0,.2)
+}
+
+
+#contato{background:#eeeeee}
+form{
+display:flex;flex-direction:column;width:300px
+}
+input,textarea{
+margin:8px 0;padding:10px;border-radius:5px;border:1px solid #ccc
+}
+button{
+padding:10px;border:none;border-radius:5px;
+background:#00adb5;color:#fff;cursor:pointer
+}
+button:hover{background:#008b92}
+
+
+.dark{background:#121212;color:#fff}
+.dark section{background:#121212 !important;color:#fff}
+.dark .card{background:#1e1e1e;color:#fff}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<h2>Gustavo Mota</h2>
+<div>
+<a href="#sobre">Sobre</a>
+<a href="#formacao">Formação</a>
+<a href="#portfolio">Portfólio</a>
+<a href="#contato">Contato</a>
+</div>
+<button onclick="tema()"></button>
+</nav>
+</header>
+
+
+<section id="sobre">
+<h1>Sobre mim</h1>
+<p>Sou estudante de Análise e Desenvolvimento de Sistemas.</p>
+<p>Tenho interesse em desenvolvimento web, HTML, CSS e JavaScript.</p>
+</section>
+
+
+<section id="formacao">
+<h1>Formação</h1>
+<p> ADS - UNINTER</p>
+<p> Português: Nativo</p>
+</section>
+
+
+<section id="portfolio">
+<h1>Portfólio</h1>
+
+<div class="card">💻 Portfólio Web Responsivo</div>
+<div class="card"> Layout com HTML e CSS</div>
+<div class="card"> Formulário com JavaScript</div>
+
+</section>
+
+
+<section id="contato">
+<h1>Contato</h1>
+
+<p>Email: <a href="mailto:gustavo10mota@gmail.com">gustavo10mota@gmail.com</a></p>
+
+<form onsubmit="enviar(event)">
+<input id="nome" placeholder="Nome">
+<input id="email" placeholder="Email">
+<textarea id="msg" placeholder="Mensagem"></textarea>
+<button>Enviar</button>
+</form>
+
+</section>
+
+<script>
+
+function enviar(e){
+e.preventDefault()
+
+let n=nome.value
+let em=email.value
+let m=msg.value
+
+if(!n||!em||!m) return alert("Preencha todos os campos")
+if(!em.includes("@")) return alert("Email inválido")
+
+alert("Mensagem enviada com sucesso!")
+e.target.reset()
+}
+
+
+function tema(){
+document.body.classList.toggle("dark")
+}
+</script>
+
+</body>
+</html>
